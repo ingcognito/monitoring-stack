@@ -1,6 +1,6 @@
 SHELL := /bin/bash -e
 
-export STACK_NAME=prom
+export STACK_NAME=monitor
 export HOSTNAME=$(hostname)
 
 .PHONY: help
