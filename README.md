@@ -22,7 +22,7 @@ Clone the project locally to your Docker host.
 
 If you would like to change which targets should be monitored or make configuration changes edit the [/prometheus/prometheus.yml](prometheus/prometheus.yml) file. The targets section is where you define what should be monitored by Prometheus. The names defined in this file are actually sourced from the service name in the docker-compose file. If you wish to change names of the services you can add the "container_name" parameter in the `docker-compose.yml` file.
 
-Once configurations are done let's start it up. From the /prometheus project directory run the following command:
+Once configurations are done let's start it up. Run the following command:
 
     $ make deploy
 
@@ -36,7 +36,7 @@ The Grafana Dashboard is now accessible via: `http://<Host IP Address>:3000` for
 
 In order to check the status of the newly created stack:
 
-    $ docker stack ps prom
+    $ docker stack ps monitoring
 
 View running services:
 
@@ -44,7 +44,11 @@ View running services:
 
 View logs for a specific service
 
-    $ docker service logs prom_<service_name>
+    $ docker service logs monitoring_<service_name>
+
+Teardown stack
+
+    $ make teardown
 
 ## Add Datasources and Dashboards
 Grafana version 5.0.0 has introduced the concept of provisioning. This allows us to automate the process of adding Datasources & Dashboards. The `/grafana/provisioning/` directory contains the `datasources` and `dashboards` directories. These directories contain YAML files which allow us to specify which datasource or dashboards should be installed. 
