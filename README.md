@@ -1,4 +1,4 @@
-Copied from https://github.com/vegasbrianc/prometheus/
+Forked from https://github.com/vegasbrianc/prometheus/
 
 # Contents
 
