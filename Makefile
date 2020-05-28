@@ -11,5 +11,8 @@ help:	## Help command
 deploy:	## Deploys stack
 	docker stack deploy -c docker-stack.yml ${STACK_NAME}
 
+deploy-traefik:	## Deploys traefik stack
+	docker stack deploy -c docker-traefik-stack.yml ${STACK_NAME}
+
 teardown: ## Teardown stack
 	docker stack rm ${STACK_NAME}
